@@ -2,7 +2,7 @@
 pragma solidity ^0.8.26;
 
 import {Test} from "forge-std/Test.sol";
-import {SplitPay} from "../src/SplitPay.sol";
+import {SplitPay} from "src/SplitPay.sol";
 
 /// @title SplitPay Test Suite
 /// @notice Comprehensive tests covering happy paths, edge cases, access control, and math precision.
@@ -344,7 +344,7 @@ contract SplitPayTest is Test {
 
         for (uint256 i; i < count; ++i) {
             recipients[i] = makeAddr(string(abi.encodePacked("r", i)));
-            shares[i] = (i < count - 1) ? (BPS / count) : BPS - (BPS / count) * (count - 1);
+            shares[i] = (i < count - 1) ? (BPS / count) : BPS - (BPS * (count - 1)) / count;
         }
 
         vm.expectRevert(abi.encodeWithSelector(SplitPay.TooManyRecipients.selector, count));

@@ -2,7 +2,7 @@
 pragma solidity ^0.8.26;
 
 import {Script, console} from "forge-std/Script.sol";
-import {SplitPay} from "../src/SplitPay.sol";
+import {SplitPay} from "src/SplitPay.sol";
 
 contract Deploy is Script {
     uint256 public constant DEFAULT_FEE_BPS = 200; // 2%
