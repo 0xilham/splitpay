@@ -211,7 +211,7 @@ export const SPLITPAY_ABI = [
 
 /// Deployed contract address — update after deployment
 export const SPLITPAY_ADDRESS =
-  "0x0000000000000000000000000000000000000000" as `0x${string}`
+  "0x95DdBf0621BF65F45275BfdcBa0881Bb605681E2" as `0x${string}`
 
 /// Convenience re-export
 export const SPLITPAY_CONTRACT = {
