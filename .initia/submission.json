@@ -1,0 +1,12 @@
+{
+  "project_name": "SplitPay",
+  "repo_url": "",
+  "commit_sha": "",
+  "rollup_chain_id": "splitpay-rollup-1",
+  "deployed_address": "",
+  "vm": "evm",
+  "native_feature": "interwoven-bridge",
+  "core_logic_path": "/splitpay-contract/src/SplitPay.sol",
+  "native_feature_frontend_path": "/splitpay-frontend/src/components/providers/interwoven-provider.tsx",
+  "demo_video_url": ""
+}

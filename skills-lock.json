@@ -1,0 +1,85 @@
+{
+  "version": 1,
+  "skills": {
+    "clean-code": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "53e960930ce5af70af8d57539ee5682feeeace5f7befa8035bfe71e33e3cb4c0"
+    },
+    "code-reviewer": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "3debd6dd3842c56044ac1a9e50643c03d4402f0d1f4910b693a3b9bbd32e1cb0"
+    },
+    "frontend-design": {
+      "source": "anthropics/skills",
+      "sourceType": "github",
+      "computedHash": "516bd2154eb843a8240e43d5b285229129853114ad7075a5e141e1c08e408c84"
+    },
+    "frontend-dev-guidelines": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "02e01feef725b35fe09ea8899d09c396e9740bf7df8a16bfec75ba7309020434"
+    },
+    "initia-appchain-dev": {
+      "source": "initia-labs/agent-skills",
+      "sourceType": "github",
+      "computedHash": "9246eb21c43b1b847879d89b6d94487922623d97dd497e91438ed5cdb92a0481"
+    },
+    "nextjs-best-practices": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "f57b0625e5e9e64dc9f3d7333c81e73f445fd9c65fe7cd0fd99a779a2e78dffd"
+    },
+    "playwright-skill": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "652d6650744e566932ff458d4958f15c446b4e315d7dcfcbe3fa0c9b280301f5"
+    },
+    "powershell-windows": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "51d420421a50017b23a09dc4c46e54871d93f205aa095ff553b2963f2e388548"
+    },
+    "react-ui-patterns": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "6c004e2900e1c11452e3de3ff144e287daf69fcdcb6f27c11483d34bddb57326"
+    },
+    "software-architecture": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "87cf49408fdf09614ca9e39e3f2a3e8fd4ff5f628f72f70e142bbaa1c32f046e"
+    },
+    "software-crypto-web3": {
+      "source": "vasilyu1983/ai-agents-public",
+      "sourceType": "github",
+      "computedHash": "33b4d4e7b26adbb2a31e0ed9abdb7e8a252b4496593137b8a8786fb7fe469562"
+    },
+    "tailwind-patterns": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "3c0d4fe7e7d3865c9cfce4290d14acfd19d62805b4703b5544ff267198f3a89f"
+    },
+    "typescript-expert": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "3e45cb0773354ceeefcdf18fac14c8f6f476e7af7d83af57fcde9839d18ea39c"
+    },
+    "ui-ux-pro-max": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "c79c03ce95e35a281f291967a5c8126ab0fef19260682510f2826c46bd75de5d"
+    },
+    "web-performance-optimization": {
+      "source": "sickn33/antigravity-awesome-skills",
+      "sourceType": "github",
+      "computedHash": "460270cda762058064f373cab8e57215dea3cb0950fc67f6d0d8c574d515ebe3"
+    },
+    "web3-frontend": {
+      "source": "pluginagentmarketplace/custom-plugin-blockchain",
+      "sourceType": "github",
+      "computedHash": "57a9ea01b1aa16a165739dbe6261ed7410b3a42514d0c28ed665513433234f08"
+    }
+  }
+}

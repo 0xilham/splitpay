@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+/* ──────────────────────────────────────────────
+   SplitPay Design System — Cyber-Fintech
+   ────────────────────────────────────────────── */
+
+@theme {
+  --color-surface: #0f1115;
+  --color-surface-elevated: #1a1b22;
+  --color-surface-overlay: #23252d;
+  
+  --color-border-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-default: rgba(255, 255, 255, 0.16);
+  --color-border-strong: rgba(255, 255, 255, 0.4);
+  
+  --color-accent: #00f0ff;
+  --color-accent-hover: #ffffff;
+  --color-accent-muted: rgba(0, 240, 255, 0.1);
+  
+  /* Utilities */
+  --font-syne: var(--font-syne), "Space Grotesk", sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, monospace;
+}
+
+/* ──────────────────────────────────────────────
+   Base
+   ────────────────────────────────────────────── */
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: var(--font-mono);
+  background-color: var(--color-surface);
+  color: rgba(255, 255, 255, 0.85);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, .font-syne {
+  font-family: var(--font-syne);
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #000;
+}
+
+/* ──────────────────────────────────────────────
+   Background Cyber Grid
+   ────────────────────────────────────────────── */
+
+.bg-cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
+}
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* ──────────────────────────────────────────────
+   Terminal & Border Utilities
+   ────────────────────────────────────────────── */
+
+.hairline-border {
+  border: 1px solid var(--color-border-default);
+}
+
+.terminal-panel {
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border-default);
+}
+
+/* ──────────────────────────────────────────────
+   Scrollbar
+   ────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent);
+}
+
+/* ──────────────────────────────────────────────
+   Animations
+   ────────────────────────────────────────────── */
+
+@keyframes glitch {
+  0% { transform: translate(0) }
+  20% { transform: translate(-2px, 1px) }
+  40% { transform: translate(-1px, -1px) }
+  60% { transform: translate(2px, 1px) }
+  80% { transform: translate(1px, -1px) }
+  100% { transform: translate(0) }
+}
+
+.hover-glitch:hover {
+  animation: glitch 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+  color: var(--color-accent);
+}

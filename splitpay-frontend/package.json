@@ -1,0 +1,52 @@
+{
+  "name": "splitpay-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "biome check",
+    "format": "biome format --write"
+  },
+  "dependencies": {
+    "@cosmjs/amino": "^0.36.0",
+    "@cosmjs/crypto": "^0.36.0",
+    "@cosmjs/encoding": "^0.36.0",
+    "@cosmjs/math": "^0.36.0",
+    "@cosmjs/proto-signing": "^0.36.0",
+    "@cosmjs/stargate": "^0.36.0",
+    "@cosmjs/tendermint-rpc": "^0.36.0",
+    "@initia/interwovenkit-react": "^2.5.1",
+    "@radix-ui/react-slot": "^1.2.4",
+    "@tanstack/react-query": "^5.96.2",
+    "@wagmi/core": "2.16.7",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "cosmjs-types": "^0.10.0",
+    "framer-motion": "^12.38.0",
+    "ky": "^1.14.3",
+    "lucide-react": "^1.7.0",
+    "next": "16.2.3",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "tailwind-merge": "^3.5.0",
+    "viem": "^2.47.10",
+    "wagmi": "^2.17.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.0",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "pnpm": {
+    "overrides": {
+      "ky": "1.14.3"
+    }
+  }
+}
