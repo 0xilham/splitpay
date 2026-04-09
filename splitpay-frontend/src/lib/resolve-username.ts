@@ -1,4 +1,5 @@
 import { isAddress, getAddress } from "viem"
+import { fromBech32, toHex } from "@cosmjs/encoding"
 import { L1_NETWORK } from "@/config/network"
 
 // ──────────────────────────────────────────────
@@ -123,26 +124,18 @@ function resolveHexAddress(input: string): ResolvedAddress {
 async function resolveBech32Address(
   bech32: string,
 ): Promise<ResolvedAddress> {
-  // Use the Initia REST API to convert bech32 → hex
-  const response = await fetch(
-    `${INITIA_REST_BASE}/initia/evm/v1/evm_address/${bech32}`,
-  )
+  try {
+    // Decode bech32 directly to get the 20-byte payload
+    const decoded = fromBech32(bech32)
+    const hex = `0x${toHex(decoded.data)}`
 
-  if (!response.ok) {
+    return {
+      address: getAddress(hex),
+      input: bech32,
+      method: "bech32",
+    }
+  } catch (err) {
     throw new Error(`Failed to resolve bech32 address: "${bech32}"`)
-  }
-
-  const data = await response.json()
-  const evmAddress = data.evm_address as string
-
-  if (!evmAddress || !isAddress(evmAddress)) {
-    throw new Error(`Invalid EVM address returned for "${bech32}"`)
-  }
-
-  return {
-    address: getAddress(evmAddress),
-    input: bech32,
-    method: "bech32",
   }
 }
 
@@ -183,31 +176,21 @@ async function resolveInitUsername(
     throw new Error(`No address found for "@${username}.init"`)
   }
 
-  // Step 2: Convert bech32 → hex EVM address via REST
-  const evmResponse = await fetch(
-    `${INITIA_REST_BASE}/initia/evm/v1/evm_address/${bech32Address}`,
-  )
+  // Step 2: Convert bech32 → hex EVM address via CosmJS synchronously
+  try {
+    const decoded = fromBech32(bech32Address)
+    const evmAddress = `0x${toHex(decoded.data)}`
 
-  if (!evmResponse.ok) {
+    return {
+      address: getAddress(evmAddress),
+      input,
+      method: "username",
+      username: `${username}.init`,
+    }
+  } catch (err) {
     throw new Error(
       `Failed to convert bech32 to EVM for "@${username}.init"`,
     )
-  }
-
-  const evmData = await evmResponse.json()
-  const evmAddress = evmData.evm_address as string
-
-  if (!evmAddress || !isAddress(evmAddress)) {
-    throw new Error(
-      `Invalid EVM address resolved for "@${username}.init"`,
-    )
-  }
-
-  return {
-    address: getAddress(evmAddress),
-    input,
-    method: "username",
-    username: `${username}.init`,
   }
 }
 
